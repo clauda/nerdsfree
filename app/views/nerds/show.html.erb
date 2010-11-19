@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @nerd.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @nerd.phone %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @nerd.area %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @nerd.email %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @nerd.url %>
+</p>
+
+<p><% @nerd.tag_list.each do |t| %> #<%= t %><br /> <% end %></p>
+
+<%= link_to 'Edit', edit_nerd_path(@nerd) %> |
+<%= link_to 'Back', nerds_path %>

@@ -1,0 +1,31 @@
+<h1>Listing nerds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Area</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+
+<% @nerds.each do |nerd| %>
+  <tr>
+    <td><%= link_to nerd.name, nerd.url %></td>
+    <td><%= nerd.phone %></td>
+    <td><%= nerd.area %></td>
+    <td><%= nerd.email %></td>
+    <td><%= link_to 'Destroy', nerd, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @nerds %>
+<br />
+
+<%= link_to 'New Nerd', new_nerd_path %>
+
+  <section>
+  <% tag_cloud(Nerd.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+  <% end %>
+</section>
