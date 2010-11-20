@@ -6,6 +6,7 @@ class CreateConfirmations < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :confirmations, :token, :unique => true
   end
 
   def self.down

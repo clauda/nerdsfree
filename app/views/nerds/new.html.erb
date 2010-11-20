@@ -1,5 +1,41 @@
-<h1>New nerd</h1>
+<%= form_for @nerd, :url => create_nerd_path do |f| %>
+  <% if @nerd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nerd.errors.count, "error") %> prohibited this nerd from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @nerd.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Back', nerds_path %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br />
+    <%= f.select :area, Nerd::AREAS %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %>
+    <%= f.text_field :tag_list, :size => 20 %> <br /> separados com vírgulas
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

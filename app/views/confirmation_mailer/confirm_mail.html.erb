@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <h1>Welcome, <%= @user.name %></h1>
+    <p>
+      Você foi cadastrado no site <%= link_to 'NerdsFree', 'http://nerdsfree.heroku.com' %>.
+      NerdsFree é um mural de contatos de freelancers em desenvolvimento e webdesign.
+    </p>
+    <p>
+      Para confirmar sua participação <%= link_to 'clique aqui!', @url %>.
+    </p>
+  </body>
+</html>

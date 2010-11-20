@@ -1,16 +1,22 @@
 class Confirmation < ActiveRecord::Base
   belongs_to :nerd
-  before_create :generate_token
+  after_save :send_confirm
   
-  def generate_token
-    self.token = ActiveSupport::SecureRandom.base64(44).tr('+/=', 'xyz')
+  def send_confirm
+    generate_token! if self.token.nil?
+    ConfirmationMailer.confirm_mail(self.nerd).deliver
+  end
+  
+  def send_remove
+    generate_token! if self.token.nil?
+    ConfirmationMailer.remove_mail(self.nerd).deliver
   end
 
   private
   
-  def send_confirmation
-    generate_token! if self.token.nil?
-    ConfirmationMailer.send_email(self.nerd).deliver
+  def generate_token!
+    self.token = ActiveSupport::SecureRandom.base64(44).tr('+/=', 'xyz')
+    self.save
   end
   
 end
