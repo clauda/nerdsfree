@@ -1,0 +1,20 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: nerdsfree_dev
+  username: root
+  password: senha
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: nerdsfree_test
+  username: root
+  password: senha
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: nerdsfree
+  username: root
+  password: senha
