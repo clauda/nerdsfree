@@ -1,0 +1,13 @@
+Font ported to iPhone by www.iphoneruler.net
+
+The fonts ported by iPhoneRuler are their author's property and all the referenced trademarks are the property of their respective owners: please look at the license files in the font archives.
+If you are a font designer and you want to review the license terms or to claim a font, please contact us at info@iphoneruler.net
+
+v1.0 - iOs 4 version
+v1.1 - PhonepadTwo added
+v1.2 - .HelveticaNeueUI and .HelveticaNeueUI Bold added to HelveticaNeue.ttc; PhoneKeyCaps added
+v1.3 - .HelveticaNeueUI Bold updated
+v1.4 - Misalignment fixed
+v1.5 - Emoji keyboard fixed; fi and fl glyphs added
+v1.6 - Missing accented glyphs added
+v1.7 - Fix for BeejiveIM

@@ -3,8 +3,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Nerds Free</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag 'scaffold', 'facebox', 'scrollable' %>
+  <%= javascript_include_tag 'cufon-yui', 'DroidSans', 'jquery', 'jquery.tools.min', 'facebox', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -17,30 +17,37 @@
 	
 	<div class="intro">
 		<div id="intro">
-			<h1>Entre em contato com os desenvolvedores freelancer em Natal/RN.</h1>
+			<h2>Entre em contato com os desenvolvedores freelancer em Natal/RN.</h2>
 		</div>
 	</div>
 	
-	<div class="content">
+	<div id="tour">
 		<div id="contacts"><%= yield %></div>
 	</div>
 	
 	<div class="downbox">
-		<div id="search">
-			<h2></h2>
-			<section>
-        <% tag_cloud(Nerd.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
-          <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
-        <% end %>
-      </section>
-			<p>Busca</p>
+		<div id="section">
+			<div class="left">
+			  <%= form_for search_path do |f| %>
+			    <%= f.text_field :search, :value => 'Busca' %>
+			  <% end %>
+        <br />
+			  <h2>Tags</h2>
+			  <div id="tags">
+          <% tag_cloud(Nerd.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
+            <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+          <% end %>
+        </div>
+			</div>
+			<div class="right">
+			  <p>Você é desenvolvedor ou webdesigner com tempo livre em Natal? <%= link_to 'Diga a todos.', new_nerd_path,:rel => "facebox[.bolder]" %></p>
+			</div>
 		</div>
 	</div>
 	
 	<footer>
 		<div id="footer">
-			<p><a href="#q">FAQ</a> · <a href="mailto:contato@krawdyah.com">Contato</a></p>
-      <p>© Claudia Farias</p>
+			<p><a href="#q">FAQ</a> · <a href="mailto:contato@krawdyah.com">Contato</a> © Claudia Farias</p>
     </div>
 	</footer>
 

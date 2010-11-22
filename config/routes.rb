@@ -6,4 +6,5 @@ Nerdsfree::Application.routes.draw do
   match "tag/:name", :to => "nerds#tags", :as => "tag"
   match "confirm/:token", :to => "nerds#confirm"
   match "remove/:token", :to => "nerds#remove"
+  match "search" => "nerds#search", :as => 'search'
 end

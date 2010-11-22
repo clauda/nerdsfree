@@ -1,6 +1,6 @@
 class Confirmation < ActiveRecord::Base
   belongs_to :nerd
-  after_save :send_confirm
+  after_create :send_confirm
   
   def send_confirm
     generate_token! if self.token.nil?

@@ -1,11 +1,12 @@
 class NerdsController < ApplicationController
 
   def index
-    @nerds = Nerd.confirmeds.paginate(:page => params[:page])
+    @nerds = Nerd.confirmeds
   end
 
   def new
     @nerd = Nerd.new
+    render :partial => 'form'
   end
 
   def create
@@ -25,17 +26,24 @@ class NerdsController < ApplicationController
   end
   
   def remove
-    Confirmation.find_by_token(params[:token]).nerd.destroy
+    @confirmation = Confirmation.find_by_token(params[:token])
+    @confirmation.nerd.destroy unless @confirmation.nil?
     redirect_to root_path
   end
   
   def confirm
-    Confirmation.find_by_token(params[:token]).confirm!
+    @confirmation = Confirmation.find_by_token(params[:token])
+    @confirmation.nerd.confirm! unless @confirmation.nil?
     redirect_to root_path
   end
   
   def tags
     @nerds = Nerd.tagged_with(params[:name]).paginate(:page => params[:page])
+    render :index
+  end
+  
+  def search
+    @nerds = Nerds.confirmeds.where("name LIKE '%#{params[:search]}%'").paginate(:page => params[:page])
     render :index
   end
   

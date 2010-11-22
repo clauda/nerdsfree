@@ -1,0 +1,25 @@
+<div class="form">
+<%= form_for @nerd, :url => create_nerd_path do |f| %>
+  <div class="field"> 
+    <div class="label"><%= f.label :name, 'Nome' %> </div>
+    <div class="input"><%= f.text_field :name %></div>
+  </div>
+  <div class="field"> 
+    <div class="label"><%= f.label :phone, 'Telefone' %> </div>
+    <div class="input"><%= f.text_field :phone %> </div>
+  </div>
+  <div class="field"> 
+    <div class="label"><%= f.label :email %> </div>
+    <div class="input"><%= f.text_field :email %></div>
+  </div>
+  <div class="field"> 
+    <div class="label"><%= f.label :url, 'Site' %> </div>
+    <div class="input"><%= f.text_field :url %></div>
+  </div>
+  <div class="field"> 
+    <div class="label"><%= f.label :tags %> </div>
+    <div class="input"><%= f.text_field :tag_list, :size => 20 %> <br /> separados com vírgulas. Ex.: webdesigner, photoshop, php, java</div>
+  </div>
+  <div class="actions"><%= f.submit 'Salvar' %></div>
+<% end %>
+</div>

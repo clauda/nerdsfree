@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101120002230) do
+ActiveRecord::Schema.define(:version => 20101122182330) do
 
   create_table "confirmations", :force => true do |t|
     t.integer  "nerd_id"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20101120002230) do
   create_table "nerds", :force => true do |t|
     t.string   "name"
     t.string   "phone"
-    t.string   "area"
     t.string   "email"
     t.string   "url"
     t.datetime "created_at"
