@@ -7,8 +7,6 @@ jQuery(document).ready(function($){
 })
 
 jQuery(document).ready(function($) {
-    $("#chained").scrollable({circular: true, mousewheel: true}).navigator().autoscroll({
-	    interval: 3000		
-    });	
+    $("#chained").scrollable({circular: true, mousewheel: true}).navigator();	
 });
 

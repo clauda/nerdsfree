@@ -47,4 +47,7 @@ class NerdsController < ApplicationController
     render :index
   end
   
+  def faq
+  end
+  
 end
