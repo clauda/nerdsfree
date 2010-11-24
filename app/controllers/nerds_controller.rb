@@ -13,7 +13,7 @@ class NerdsController < ApplicationController
     if @nerd.save
       redirect_to root_path
     else
-      flash[:notice] = @nerd.errors.full_message
+      flash[:notice] = @nerd.errors.full_messages
       render :new
     end
   end
