@@ -4,13 +4,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <h1>Welcome, <%= @user.name %></h1>
+    <h1>Hey, <%= @user.name %></h1>
     <p>
       Você foi cadastrado no site <%= link_to 'NerdsFree', 'http://nerdsfree.heroku.com' %>.
       NerdsFree é um mural de contatos de freelancers em desenvolvimento e webdesign.
+      
+      Seus dados:
+      Nome: <%= @user.name %>
+      Telefone: <%= @user.phone %>
+      Email: <%= @user.email %>
+      Site: <%= @user.url %>
     </p>
     <p>
-      Para confirmar sua participação <%= link_to 'clique aqui!', @url %>.
+      Para confirmar sua participação <%= link_to 'clique aqui!', @confirm %>.
+      Para cancelar sua participação <%= link_to 'clique aqui!', @remove %>.
     </p>
   </body>
 </html>

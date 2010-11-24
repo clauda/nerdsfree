@@ -1,8 +1,8 @@
 <div class="form">
-<%= form_for @nerd, :url => create_nerd_path do |f| %>
+<%= form_for Nerd.new, :url => create_nerd_path do |f| %>
   <div class="field"> 
     <div class="label"><%= f.label :name, 'Nome' %> </div>
-    <div class="input"><%= f.text_field :name %></div>
+    <div class="input"><%= f.text_field :name, :size => 40 %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :phone, 'Telefone' %> </div>
@@ -10,16 +10,18 @@
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :email %> </div>
-    <div class="input"><%= f.text_field :email %></div>
+    <div class="input"><%= f.text_field :email, :size => 40  %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :url, 'Site' %> </div>
-    <div class="input"><%= f.text_field :url %></div>
+    <div class="input"><%= f.text_field :url, :size => 40  %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :tags %> </div>
-    <div class="input"><%= f.text_field :tag_list, :size => 20 %> <br /> separados com vírgulas. Ex.: webdesigner, photoshop, php, java</div>
+    <div class="input"><%= f.text_field :tag_list, :size => 40 %> <br /> separados com vírgulas. Ex.: webdesigner, photoshop, php, java</div>
   </div>
-  <div class="actions"><%= f.submit 'Salvar' %></div>
+  <div class="actions"><%= f.submit 'Enviar' %></div>
+  <br />
+  <br />
 <% end %>
 </div>

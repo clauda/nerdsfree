@@ -3,7 +3,8 @@ class ConfirmationMailer < ActionMailer::Base
   
   def confirm_mail(nerd)
     @user = nerd
-    @url  = "http://nerdsfree.heroku.com/confirm/#{nerd.confirmation.token}"
+    @confirm  = "http://nerdsfree.heroku.com/confirm/#{nerd.confirmation.token}"
+    @remove  = "http://nerdsfree.heroku.com/remove/#{nerd.confirmation.token}"
     mail(:to => nerd.email, :subject => "Nerds for Free")
   end
   

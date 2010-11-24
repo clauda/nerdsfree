@@ -1,31 +1,16 @@
-<!-- "previous page" action -->
-<a class="prev browse left"></a>
-
-<!-- root element for scrollable -->
-<div class="scrollable" id="chained">   
-   <!-- root element for the items -->
-   <div class="items">
-   
-      <% @nerds.each do |nerd| %>
-        <%= cycle(raw('<div>'), '', '', '', '', '') %>
-        
-        <div class="postit">
-          <h3><%= link_to nerd.name, nerd.url %></h3>
-          <p><%= nerd.phone %><br />
-          <%= nerd.email %><br />
-          <%= link_to image_tag('delete.png', :size => '16x16'), destroy_path(nerd), :confirm => 'Are you sure?', :method => :delete %><br />
-          <% nerd.tag_list.each do |t| %> <span class="tag"><%= t %></span> <% end %>
-          </p>
-        </div>
-        
-        <%= cycle(raw('</div>'), '', '', '', '', '') %>
-      <% end %>
-      <%#= will_paginate @nerds %>
-  </div>
-</div>
-
-
-<!-- wrapper for navigator elements -->
-<div class="navi"></div>
-<br clear="all" />
-
+<table>
+  <tr>
+  <% @nerds.each do |nerd| %>
+    <%= cycle("", "", "", "", raw("</tr><tr>")) %>
+    <td>
+      <h3><%= link_to nerd.name, nerd.url %></h3>
+      <p><%= nerd.phone %><br />
+      <%= nerd.email %><br />
+      <% nerd.tag_list.each do |t| %> <span class="tag"><%= t %></span> <% end %>
+      </p>
+      <%= link_to '', destroy_path(nerd), :confirm => 'Are you sure?', :method => :delete, :class => 'remove' %>
+    </td>
+  <% end %>
+  </tr>
+</table>
+<%= will_paginate @nerds %>

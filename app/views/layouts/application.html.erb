@@ -2,27 +2,28 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Nerds Free</title>
-  <%= stylesheet_link_tag 'scaffold', 'facebox', 'scrollable' %>
-  <%= javascript_include_tag 'cufon-yui', 'DroidSans', 'jquery', 'jquery.tools.min', 'facebox', 'application' %>
+  <title>Nerds For Free</title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+<div id="container">
 	<header>
 		<div id="header">
-			<h1><a href="#">Nerds Free</a></h1>
+			<h1><%= link_to 'Nerds for Free', root_path %></h1>
+			<h2>Desenvolvedores e WebDesigner Freelancer em Natal-RN</h2>
 		</div>
 	</header>
 	
-	<div class="intro">
+	<!-- div class="intro">
 		<div id="intro">
 			<h2>Entre em contato com os desenvolvedores freelancer em Natal/RN.</h2>
 		</div>
-	</div>
+	</div -->
 	
 	<div id="tour">
-		<div id="contacts"><%= yield %></div>
+		<%= yield %>
 	</div>
 	
 	<div class="downbox">
@@ -32,7 +33,6 @@
 			    <%= f.text_field :search, :value => 'Busca' %>
 			  <% end %>
         <br />
-			  <h2>Tags</h2>
 			  <div id="tags">
           <% tag_cloud(Nerd.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
             <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
@@ -40,16 +40,17 @@
         </div>
 			</div>
 			<div class="right">
-			  <p>Você é desenvolvedor ou webdesigner com tempo livre em Natal? <%= link_to 'Diga a todos.', new_nerd_path,:rel => "facebox[.bolder]" %></p>
+			  <p>Você é desenvolvedor ou webdesigner com tempo livre em Natal? <%= link_to 'Diga a todos.', faq_path,:rel => "facebox[.bolder]" %></p>
 			</div>
 		</div>
 	</div>
 	
 	<footer>
 		<div id="footer">
-			<p><a href="#q">FAQ</a> · <a href="mailto:contato@krawdyah.com">Contato</a> © Claudia Farias</p>
+			<span><%= link_to 'FAQ', faq_path %> · <a href="mailto:contato@krawdyah.com">Contato</a> . Claudia Farias © 2010</span>
     </div>
 	</footer>
 
+</div>
 </body>
 </html>

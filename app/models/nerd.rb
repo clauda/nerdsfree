@@ -1,6 +1,7 @@
 class Nerd < ActiveRecord::Base  
   default_scope order(:name)  
   acts_as_taggable
+
   has_one :confirmation, :dependent => :destroy
   after_create :send_confirm_mail  
   
