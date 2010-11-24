@@ -1,16 +1,19 @@
-<table>
-  <tr>
-  <% @nerds.each do |nerd| %>
-    <%= cycle("", "", "", "", raw("</tr><tr>")) %>
-    <td>
-      <h3><%= link_to nerd.name, nerd.url %></h3>
-      <p><%= nerd.phone %><br />
-      <%= nerd.email %><br />
-      <% nerd.tag_list.each do |t| %> <span class="tag"><%= t %></span> <% end %>
-      </p>
-      <%= link_to '', destroy_path(nerd), :confirm => 'Are you sure?', :method => :delete, :class => 'remove' %>
-    </td>
-  <% end %>
-  </tr>
-</table>
-<%= will_paginate @nerds %>
+<% unless @nerds.empty? %>
+  <table>
+    <tr>
+    <% @nerds.each do |nerd| %>
+      <%= cycle("", "", "", "", raw("</tr><tr>")) %>
+      <td>
+        <h3><%= link_to nerd.name, nerd.url %> <%= link_to "-", destroy_path(nerd), :confirm => 'Are you sure?', :method => :delete %></h3>
+        <p><%= nerd.phone %><br />
+        <%= nerd.email %><br />
+        <% nerd.tag_list.each do |t| %> <span class="tag"><%= t %></span> <% end %>
+        </p>
+      </td>
+    <% end %>
+    </tr>
+  </table>
+  <%= will_paginate @nerds %>
+<% else %>
+  <p>Nenhum Encontrado</p>
+<% end %>

@@ -14,11 +14,11 @@
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :url, 'Site' %> </div>
-    <div class="input"><%= f.text_field :url, :size => 40  %></div>
+    <div class="input"><%= f.text_field :url, :size => 40, :value => 'http://'  %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :tags %> </div>
-    <div class="input"><%= f.text_field :tag_list, :size => 40 %> <br /> separados com vírgulas. Ex.: webdesigner, photoshop, php, java</div>
+    <div class="input"><%= f.text_field :tag_list, :size => 40 %> <br /> separados por vírgulas. <br />Ex.: rails, webdesigner, photoshop, php, java, desenvolvedor, python</div>
   </div>
   <div class="actions"><%= f.submit 'Enviar' %></div>
   <br />

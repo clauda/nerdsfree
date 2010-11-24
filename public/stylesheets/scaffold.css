@@ -42,12 +42,10 @@ footer {	width: 100%;}
 .css2{font-size:1.2em;}
 .css3{font-size:1.4em;}
 .css4{font-size:1.6em;}
-table { width:100%; border-spacing:20px;}
-td { width:185px;padding:20px;-moz-box-shadow:1px 1px 30px #000; box-shadow:1px 1px 30px #000;-moz-border-radius:10px;border-radius:10px;background-color:#000; opacity:0.6; text-shadow: 0 0 0; color: #999}
+table { border-spacing:20px;}
+td { width:200px;padding:20px;-moz-box-shadow:1px 1px 30px #000; box-shadow:1px 1px 30px #000;-moz-border-radius:10px;border-radius:10px;background-color:#000; opacity:0.6; text-shadow: 0 0 0; color: #999}
 .card { padding:20px;-moz-box-shadow:1px 1px 30px #000; box-shadow:1px 1px 30px #000;-moz-border-radius:10px;border-radius:10px;background-color:#000; opacity:0.6; text-shadow: 0 0 0; color: #999}
 td:hover {	background:none repeat scroll 0 0 #FFF; cursor: pointer; color: #000; }
 td:hover a {	color: #000; }
-.remove{background:url("/images/delete.png") no-repeat scroll top right transparent; height:16px; position:absolute; right:0;top:0;width:16px;}
-.remove a:hover {display:inline}
 
 

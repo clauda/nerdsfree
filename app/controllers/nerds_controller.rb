@@ -42,7 +42,7 @@ class NerdsController < ApplicationController
   end
   
   def search
-    @nerds = Nerds.confirmeds.where("name LIKE '%#{params[:search]}%'").paginate(:page => params[:page])
+    @nerds = Nerd.where("name LIKE '%#{params[:search]}%'").confirmeds.paginate(:page => params[:page], :per_page => 8)
     render :index
   end
   

@@ -29,8 +29,8 @@
 	<div class="downbox">
 		<div id="section">
 			<div class="left">
-			  <%= form_for search_path do |f| %>
-			    <%= f.text_field :search, :value => 'Busca' %>
+			  <%= form_tag search_path do |f| %>
+          <%= text_field_tag :search, nil, :type => :search %>
 			  <% end %>
         <br />
 			  <div id="tags">

@@ -15,7 +15,7 @@ class Nerd < ActiveRecord::Base
   def send_confirm_mail
     Confirmation.create :nerd_id => self.id
   end
-  
+
   def send_remove_mail
     self.confirmation.send_remove
   end
