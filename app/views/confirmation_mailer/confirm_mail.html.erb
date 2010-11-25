@@ -9,14 +9,14 @@
       Você foi cadastrado no site <%= link_to 'NerdsFree', 'http://nerdsfree.heroku.com' %>.
       NerdsFree é um mural de contatos de freelancers em desenvolvimento e webdesign.
       
-      Seus dados:
-      Nome: <%= @user.name %>
-      Telefone: <%= @user.phone %>
-      Email: <%= @user.email %>
-      Site: <%= @user.url %>
+      Seus dados:<br />
+      Nome: <b><%= @user.name %></b><br />
+      Telefone: <%= @user.phone %><br />
+      Email: <%= @user.email %><br />
+      Site: <%= @user.url %><br />
     </p>
     <p>
-      Para confirmar sua participação <%= link_to 'clique aqui!', @confirm %>.
+      Para confirmar sua participação <%= link_to 'clique aqui!', @confirm %>.<br />
       Para cancelar sua participação <%= link_to 'clique aqui!', @remove %>.
     </p>
   </body>
