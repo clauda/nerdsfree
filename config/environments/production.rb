@@ -35,9 +35,21 @@ Nerdsfree::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Disable delivery errors, bad email addresses will be ignored
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
+  
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :domain => "krawdyah.com",
+    :user_name => "krawdyah@krawdyah.com",
+    :password => ENV['SMTP_PASSWORD']
+  }
+
+  
 
   # Enable threaded mode
   # config.threadsafe!
