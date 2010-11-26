@@ -1,7 +1,7 @@
 class NerdsController < ApplicationController
 
   def index
-    @nerds = Nerd.confirmeds.paginate :page => params[:page], :per_page => 8, :offset => 'RAND()'
+    @nerds = Nerd.confirmeds.paginate :page => params[:page], :per_page => 8, :order => 'random()'
   end
 
   def new
