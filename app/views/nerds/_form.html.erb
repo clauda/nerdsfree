@@ -2,7 +2,7 @@
 <%= form_for Nerd.new, :url => create_nerd_path do |f| %>
   <div class="field"> 
     <div class="label"><%= f.label :name, 'Nome' %> </div>
-    <div class="input"><%= f.text_field :name, :size => 40 %></div>
+    <div class="input"><%= f.text_field :name, :size => 35, :required => "required" %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :phone, 'Telefone' %> </div>
@@ -10,15 +10,15 @@
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :email %> </div>
-    <div class="input"><%= f.text_field :email, :size => 40  %></div>
+    <div class="input"><%= f.text_field :email, :size => 35, :required => "required" %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :url, 'Site' %> </div>
-    <div class="input"><%= f.text_field :url, :size => 40, :value => 'http://'  %></div>
+    <div class="input"><%= f.text_field :url, :size => 35, :value => 'http://'  %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :tags %> </div>
-    <div class="input"><%= f.text_field :tag_list, :size => 40 %> <br /> separados por vírgulas. <br />Ex.: rails, webdesigner, photoshop, php, java, desenvolvedor, python</div>
+    <div class="input"><%= f.text_field :tag_list, :size => 35 %> <br /> separados por vírgulas. <br />Ex.: rails, webdesigner, photoshop, php, java, desenvolvedor, python</div>
   </div>
   <div class="actions"><%= f.submit 'Enviar' %></div>
   <br />

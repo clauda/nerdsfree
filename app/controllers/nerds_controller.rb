@@ -11,28 +11,39 @@ class NerdsController < ApplicationController
   def create
     @nerd = Nerd.new params[:nerd]
     if @nerd.save
+      flash[:notice] = 'Enviamos as instruções de confirmação da sua participação para o seu informado!'
       redirect_to root_path
     else
       flash[:notice] = @nerd.errors.full_messages
-      render :new
+      render :faq
     end
   end
 
   def destroy
     Nerd.find(params[:id]).send_remove_mail
-    flash[:notice] = 'Um email foi enviado para este usuário! Siga as instruções no email para concluir a remoção!'
+    flash[:notice] = 'Enviamos um email! Siga as instruções no email para concluir a remoção!'
     redirect_to root_path
   end
   
   def remove
     @confirmation = Confirmation.find_by_token(params[:token])
-    @confirmation.nerd.destroy unless @confirmation.nil?
+    unless @confirmation.nil?
+      @confirmation.nerd.destroy 
+      flash[:notice] = 'Sua participação foi removida.'
+    else
+      flash[:notice] = 'Não Encontrado. Tente Novamente.'
+    end
     redirect_to root_path
   end
   
   def confirm
     @confirmation = Confirmation.find_by_token(params[:token])
-    @confirmation.nerd.confirm! unless @confirmation.nil?
+    unless @confirmation.nil?
+      @confirmation.nerd.confirm! 
+      flash[:notice] = 'Bem Vindo ao Hall de Nerds de Natal.'
+    else
+      flash[:notice] = 'Não Encontrado. Tente Novamente.'
+    end
     redirect_to root_path
   end
   

@@ -3,24 +3,37 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Nerds Hall</title>
-  <%= stylesheet_link_tag 'scaffold' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'scaffold', 'ui.notify' %>
+  <%= javascript_include_tag 'jquery', 'jquery.tools.min', 'ui.widget', 'jquery.notify', 'application' %>
   <%= csrf_meta_tag %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+        $("#new_nerd").validator();
+        <% unless flash.empty? %>
+        $("#container").notify("create", {
+            text: '<%= flash[:notice] %>'
+        });
+        <% end %>
+    });
+  </script>
 </head>
 <body>
+
 <div id="container">
+    <div id="basic-template">
+        <a class="ui-notify-cross ui-notify-close" href="#">x</a>
+        <p>#{text}</p>
+    </div>
+</div>
+
+
+<div id="main">
 	<header>
 		<div id="header">
-			<h1><%= link_to 'Nerds Hall', root_path %></h1>
-			<h2>Desenvolvedores e WebDesigner Freelancer em Natal-RN</h2>
+			<%= link_to image_tag('logo.png'), root_path %>
+			<h2><i>Desenvolvedores e WebDesigner Freelancer em Natal-RN</i></h2>
 		</div>
 	</header>
-	
-	<!-- div class="intro">
-		<div id="intro">
-			<h2>Entre em contato com os desenvolvedores freelancer em Natal/RN.</h2>
-		</div>
-	</div -->
 	
 	<div id="tour">
 		<%= yield %>
@@ -29,8 +42,9 @@
 	<div class="downbox">
 		<div id="section">
 			<div class="left">
-			  <%= form_tag search_path do |f| %>
+			  <%= form_tag(search_path) do %>
           <%= text_field_tag :search, nil, :type => :search %>
+          <%= image_tag('search.png', :size => '24x24') %>
 			  <% end %>
         <br />
 			  <div id="tags">

@@ -6,7 +6,7 @@ class Nerd < ActiveRecord::Base
   after_create :send_confirm_mail  
   
   validates_presence_of :name, :email
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :message => 'já está cadastrado.'
   
   AREAS = ['Desenvolvedor', 'WebDesigner']
   
