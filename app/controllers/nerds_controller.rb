@@ -48,7 +48,8 @@ class NerdsController < ApplicationController
   end
   
   def tags
-    @nerds = Nerd.confirmeds.tagged_with(params[:name]).paginate(:page => params[:page])
+    tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @nerds = Nerd.confirmeds.tagged_with(tag.name).paginate(:page => params[:page])
     render :index
   end
   
