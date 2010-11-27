@@ -31,6 +31,7 @@ div.right{ width: 480px; float: right; color: #FFF; padding: 10px; text-shadow:1
 input { border-radius: 5px;	-moz-border-radius:5px;-moz-box-shadow:0 0 10px #999 inset;background-color:#FFFFFF;border:1px solid #999;border-radius:5px;box-shadow:0 0 10px #999 inset; margin:5px; padding: 9px;	font-size: 12px; z-index:999; width:80%}
 .field { margin: 5px; clear:both;height:1%;overflow:hidden;padding:10px 0;}
 .label {	width: 50px; font-size: 12px;	color: #FFF; margin:10px; padding:5px; position:absolute; }
+form input[type=search] { width:200px;	}
 form input[type=submit], form button, select {	padding: 9px 13px 9px; width:80px;	}
 form input[type=submit] {	-moz-border-radius: 5px;	border-radius: 5px; float: right; }
 .input{margin-left: 70px;}
