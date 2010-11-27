@@ -45,7 +45,7 @@ Nerdsfree::Application.configure do
     :authentication => :plain,
     :enable_starttls_auto => true,
     :domain => "krawdyah.com",
-    :user_name => "noreply@krawdyah.com",
+    :user_name => "krawdyah@krawdyah.com",
     :password => ENV['SMTP_PASSWORD']
   }
 
