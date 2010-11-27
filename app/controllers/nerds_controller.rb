@@ -48,12 +48,12 @@ class NerdsController < ApplicationController
   end
   
   def tags
-    @nerds = Nerd.tagged_with(params[:name]).paginate(:page => params[:page])
+    @nerds = Nerd.confirmeds.tagged_with(params[:name]).paginate(:page => params[:page])
     render :index
   end
   
   def search
-    @nerds = Nerd.where("name LIKE '%#{params[:search]}%'").confirmeds.paginate(:page => params[:page], :per_page => 8)
+    @nerds = Nerd.confirmeds.where("name LIKE '%#{params[:search]}%'").paginate(:page => params[:page], :per_page => 8)
     render :index
   end
   
