@@ -3,8 +3,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Nerds Hall</title>
-  <%= stylesheet_link_tag 'scaffold', 'ui.notify' %>
-  <%= javascript_include_tag 'jquery', 'jquery.tools.min', 'ui.widget', 'jquery.notify', 'application' %>
+  <%= stylesheet_link_tag 'scaffold', 'ui.notify', 'jquery.ui.autocomplete.custom' %>
+  <%= javascript_include_tag 'jquery', 'jquery.tools.min', 'ui.core', 'ui.widget', 'jquery.notify', 'jquery-ui-1.8.autocomplete.min', 'jquery-ui-1.8.core-and-interactions.min', 'tag-it', 'application' %>
   <%= csrf_meta_tag %>
   <script type="text/javascript">
     jQuery(document).ready(function($){
@@ -30,8 +30,8 @@
 <div id="main">
 	<header>
 		<div id="header">
-			<%= link_to image_tag('logo.png'), root_path %>
-			<h2><i>Desenvolvedores e WebDesigner Freelancer em Natal-RN</i></h2>
+			<%= link_to image_tag('nerdshall_logo.png'), root_path %>
+			<h2><i>Desenvolvedores e WebDesigners Freelancer em Natal-RN</i></h2>
 		</div>
 	</header>
 	
@@ -42,12 +42,7 @@
 	<div class="downbox">
 		<div id="section">
 			<div class="left">
-			  <%= form_tag(search_path) do %>
-          <%= text_field_tag :search, nil, :type => :search %>
-          <%= image_tag('search.png', :size => '24x24') %>
-			  <% end %>
-        <br />
-			  <div id="tags">
+			  <div class id="tags">
           <% tag_cloud(Nerd.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
             <%= link_to tag.name, tag_path(tag.id), :class => css_class %>
           <% end %>
@@ -55,13 +50,19 @@
 			</div>
 			<div class="right">
 			  <p>Você é desenvolvedor ou webdesigner com tempo livre em Natal? <%= link_to 'Diga a todos.', faq_path,:rel => "facebox[.bolder]" %></p>
+			  <br />
+			  <div id="search">
+			    <%= form_tag(search_path) do %>
+            <%= text_field_tag :search, nil, :type => :search %>
+			    <% end %>
+			  </div>
 			</div>
 		</div>
 	</div>
 	
 	<footer>
 		<div id="footer">
-			<span><%= link_to 'FAQ', faq_path %> · <a href="mailto:contato@krawdyah.com">Contato</a> . Claudia Farias © 2010</span>
+			<span><%= link_to 'FAQ', faq_path %> · <a href="mailto:contato@krawdyah.com">Contato</a>  · <%= link_to 'Sobre', 'http://blog.krawdyah.com/2010/11/nerds-for-freela/' %> · Claudia Farias © 2011</span>
     </div>
 	</footer>
 

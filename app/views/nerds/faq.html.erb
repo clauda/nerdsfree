@@ -1,19 +1,21 @@
+<br />
 <div id="content">
   <div class="left">
-    <h3>Como eu me cadastro?</h3><br />
-    <p>Não é necessário um cadastro de usuário. Apenas preencha seus dados e nos envie. Você irá receber um email pedindo a confirmação da sua participação.</p><br />
-    <h3>Você pode se cadastrar agora!</h3><br />
-    <div class="card"><%= render 'form' %></div>
+    <h3>Você é programador ou design e está disponível para trabalhar? Informe seus dados de contato!</h3><br />
+    <div class="card">
+      <%= render 'form' %>
+      </div>
     <br />
   </div>
   
   <div class="right">
-    <p class="large">Reunimos os desenvolvedores e webdesigners disponíveis para projetos freela em Natal.</p>
-    <br />
-    <h3>Como eu posso remover meu cadastro?</h3><br />
-    <p>Ao lado do seu nome existe um link, que ao clicar envia um email para você pedindo a confirmação da exclusão da sua participação no NerdsFree.
+    <h3>Como eu me cadastro?</h3>
+    <p>Apenas preencha seus dados de contato e nos envie. Você irá receber um email pedindo a confirmação da sua participação.</p><br />
+    <h3>Como eu posso remover meu cadastro?</h3>
+    <p>No seu "cartão de visitas" existe um "x", que ao clicar envia um email para você pedindo a confirmação da exclusão da sua participação no NerdsHall.
     </p><br />
-    <h3>Só podem participar pessoas da área de informática?</h3><br />
-    <p>Sim. Porém, o código fonte desta aplicação está disponível no GitHub para quem quiser colocar essa idéia para funcionar em outras cidades e outras áreas de atuação. O NerdsFree se reserva no direito de remover qualquer anúncio no nosso mural sem qualquer aviso prévio se considerar que o cadastro não pertence ao escopo da informática.</p><br />
+    <h3>Só podem participar pessoas da área de informática?</h3>
+    <p>Sim. Porém, o código fonte desta aplicação está disponível no <%= link_to "GitHub", "http://github.com/krawdyah/nerdsfree" %> para quem quiser colocar essa idéia para funcionar em outras cidades ou outras áreas de atuação. </p><br />
+    <p>O NerdsHall se reserva no direito de remover qualquer anúncio do nosso sistema sem qualquer aviso prévio se considerar que o cadastro não pertence ao escopo de profissionais de desenvolvimento e design na cidade de Natal/RN.</p><br />
   </div>
 </div>

@@ -1,7 +1,7 @@
 class NerdsController < ApplicationController
 
   def index
-    @nerds = Nerd.confirmeds.paginate :page => params[:page], :per_page => 8, :order => 'random()'
+    @nerds = Nerd.confirmeds.paginate :page => params[:page], :per_page => 6, :order => 'rand()'
   end
 
   def new
@@ -10,6 +10,7 @@ class NerdsController < ApplicationController
 
   def create
     @nerd = Nerd.new params[:nerd]
+    @nerd.tag_list.push params[:item][:tags] unless params[:item].nil?
     if @nerd.save
       flash[:notice] = 'Enviamos as instruções de confirmação da sua participação para o seu informado!'
       redirect_to root_path

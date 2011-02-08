@@ -2,11 +2,11 @@
 <%= form_for Nerd.new, :url => create_nerd_path do |f| %>
   <div class="field"> 
     <div class="label"><%= f.label :name, 'Nome' %> </div>
-    <div class="input"><%= f.text_field :name, :size => 35, :required => "required" %></div>
+    <div class="input"><%= f.text_field :name, :size => 35, :required => "required", :autocomplete => :off, :maxlength => 16 %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :phone, 'Telefone' %> </div>
-    <div class="input"><%= f.text_field :phone %> </div>
+    <div class="input"><%= f.text_field :phone, :autocomplete => :off %> </div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :email %> </div>
@@ -14,14 +14,13 @@
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :url, 'Site' %> </div>
-    <div class="input"><%= f.text_field :url, :size => 35, :value => 'http://'  %></div>
+    <div class="input"><%= f.url_field :url, :autocomplete => :off, :size => 35, :value => 'http://'  %></div>
   </div>
   <div class="field"> 
     <div class="label"><%= f.label :tags %> </div>
-    <div class="input"><%= f.text_field :tag_list, :size => 35 %> <br /> separados por vírgulas. <br />Ex.: rails, webdesigner, photoshop, php, java, desenvolvedor, python</div>
+    <div class="input"><ul id="mytags"></ul> Ex.: rails, webdesigner, photoshop, php, java, python</div>
   </div>
-  <div class="actions"><%= f.submit 'Enviar' %></div>
-  <br />
+  <div class="actions"><%= f.submit 'Enviar' %></div><br />
   <br />
 <% end %>
 </div>

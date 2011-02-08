@@ -2,18 +2,23 @@
   <table>
     <tr>
     <% @nerds.each do |nerd| %>
-      <%= cycle("", "", "", "", raw("</tr><tr>")) %>
+      <%= cycle("", "", "", raw("</tr><tr>")) %>
       <td>
-        <h3><%= link_to nerd.name, nerd.url %> <%= link_to "-", destroy_path(nerd), :confirm => 'Are you sure?', :method => :delete %></h3>
-        <p><%= nerd.phone %><br />
-        <%= nerd.email %><br />
-        <% nerd.tag_list.each do |t| %> <span class="tag"><%= t %></span> <% end %>
-        </p>
+        <div class="tags">
+          <% nerd.tag_list[0..2].each do |t| %> <span class="tag"><%= t %></span><br /> <% end %>
+        </div>
+        <div class="note rounded">
+          <h3><%= link_to nerd.name, url_for(:host =>nerd.link, :protocol => 'http') %> </h3>
+          <p><%= nerd.phone %><br />
+          <%= nerd.email %>
+          <span class="remove"><%= link_to image_tag('delete.png', :size => "10x10"), destroy_path(nerd), :confirm => 'Are you sure?', :method => :delete, :title => "Clique para remover!" %></span>
+          </p>
+        </div>
       </td>
     <% end %>
     </tr>
   </table>
   <%= will_paginate @nerds %>
 <% else %>
-  <p>Nenhum Encontrado</p>
+  <h3 style="margin: 30px; color: #DDD">Nenhum nerd encontrado!</h3>
 <% end %>

@@ -7,9 +7,8 @@ class Nerd < ActiveRecord::Base
   
   validates_presence_of :name, :email
   validates_uniqueness_of :email, :message => 'já está cadastrado.'
-  
-  AREAS = ['Desenvolvedor', 'WebDesigner']
-  
+  # validates_format_of :url, :with => /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+
   scope :confirmeds, where(:confirmed => true)
   
   def send_confirm_mail
@@ -23,6 +22,10 @@ class Nerd < ActiveRecord::Base
   def confirm!
     self.confirmed = true
     self.save
+  end
+  
+  def link
+    link = self.url.nil? ? "#" : self.url.gsub('http://', '')
   end
   
 end
