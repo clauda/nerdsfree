@@ -1,4 +1,5 @@
 <% unless @nerds.empty? %>
+<div id="cards">
   <table>
     <tr>
     <% @nerds.each do |nerd| %>
@@ -18,7 +19,9 @@
     <% end %>
     </tr>
   </table>
+</div>
   <%= will_paginate @nerds %>
 <% else %>
   <h3 style="margin: 30px; color: #DDD">Nenhum nerd encontrado!</h3>
 <% end %>
+
