@@ -15,7 +15,7 @@ a {	color: #999;	text-decoration: none;	-webkit-transition: all, .3s;}
 h1 { font-size: 66px; text-transform: uppercase; padding: 30px 0; font-family: dock; font-weight: normal; }
 h1 a { color: #658E15; text-shadow: 1px 1px 1px #000; }
 h2 {	font-size: 18px;	font-weight: 100; color:#DDD; text-shadow: 1px 1px 1px #000; font-family: "Georgia", "Helvetica", "Lucida Grande", sans-serif; }
-h3 {	font-size: 18px;	font-weight: bold; text-overflow: ellipsis; text-transform: uppercase; }
+h3 {	font-size: 14px;	font-weight: normal; text-overflow: ellipsis; text-transform: uppercase; }
 #main { margin:0 auto;padding:0 0 16px;position:relative;width:1081px;z-index:1000;}
 #header { padding: 20px;	margin: 0px auto;	overflow: hidden;width:1081px; text-align:center;}
 ul.nav {	margin: 0;	padding: 0;	float: right;	list-style: none;	overflow: hidden;}
