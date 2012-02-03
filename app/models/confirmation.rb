@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Confirmation < ActiveRecord::Base
   belongs_to :nerd
   after_create :send_confirm

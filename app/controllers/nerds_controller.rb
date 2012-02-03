@@ -1,7 +1,8 @@
+# encoding: utf-8
 class NerdsController < ApplicationController
 
   def index
-    @nerds = Nerd.confirmeds.paginate :page => params[:page], :per_page => 6, :order => 'random()'
+    @nerds = Nerd.confirmeds.paginate :page => params[:page], :per_page => 6
   end
 
   def new

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Nerd < ActiveRecord::Base  
   default_scope order(:name)  
   acts_as_taggable

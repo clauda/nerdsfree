@@ -1,3 +1,4 @@
+@font-face { font-family: dock; src: url('dock.otf'); }
 @font-face { font-family: 'DroidSans'; src:url('/fonts/DroidSans.ttf');} 
 @font-face { font-family: 'DroidSans-Bold'; src:url('/fonts/DroidSans-Bold.ttf');} 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,
@@ -8,10 +9,11 @@ del {	text-decoration: line-through;}
 
 
 * {	margin:0;padding:0}
-body {color: #FFF;line-height:1.6em;font-size:12px;line-height:1.8em;background-color: #2E3B44; text-align: justify;font-family: "DroidSans", "Lucida Grande", sans-serif;}
+body {color: #FFF;line-height:1.6em;font-size:12px;line-height:1.8em;background: #2E3B44; text-align: justify;font-family: "Lucida Grande", "Verdana", sans-serif;}
 a {	color: #999;	text-decoration: none;	-webkit-transition: all, .3s;}
-img { -moz-border-shadow: 1px 1px 1px #FFF; border-shadow: 1px 1px 1px #FFF}
-h1 {	font-size: 30px;	font-weight: bold; padding: 10px 0; }
+/*img { -moz-border-shadow: 1px 1px 1px #FFF; border-shadow: 1px 1px 1px #FFF}*/
+h1 { font-size: 66px; text-transform: uppercase; padding: 30px 0; font-family: dock; font-weight: normal; }
+h1 a { color: #658E15; text-shadow: 1px 1px 1px #000; }
 h2 {	font-size: 18px;	font-weight: 100; color:#DDD; text-shadow: 1px 1px 1px #000; font-family: "Georgia", "Helvetica", "Lucida Grande", sans-serif; }
 h3 {	font-size: 18px;	font-weight: bold; text-overflow: ellipsis; text-transform: uppercase; }
 #main { margin:0 auto;padding:0 0 16px;position:relative;width:1081px;z-index:1000;}

@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20101122182330) do
     t.datetime "updated_at"
   end
 
+  add_index "confirmations", ["token"], :name => "index_confirmations_on_token", :unique => true
+
   create_table "nerds", :force => true do |t|
     t.string   "name"
     t.string   "phone"
